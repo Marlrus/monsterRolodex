@@ -1,27 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
 	constructor(){
 		super()
 		this.state = {
-			monsters: [
-				{
-					name: 'Frankenstein',
-					id: '1'
-				},
-				{
-					name: 'Dracula',
-					id: '2'
-				},
-				{
-					name: 'Zombie',
-					id: '3'
-				}
-			]
+			monsters: []
 		}
 	}
+
+	//Run when the component renders in the page (LIFECYCLE METHOD)
+	componentDidMount() {
+		//Make the API Call
+		fetch('https://jsonplaceholder.typicode.com/users')
+		//Convert into JSON
+		.then(response => response.json())
+		//Use the data to render 
+		.then(users => this.setState({ monsters: users }))
+	}
+
 	render () {
 		return (
 			<div className="App">
