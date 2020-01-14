@@ -1,0 +1,9 @@
+.card-list {
+    width: 85vw;
+    margin: 0 auto;
+    display: grid;
+    /* 1fr means 1 fraction, or an equal part. */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* Distance between each column will be 20px */
+    grid-gap: 20px;
+}
